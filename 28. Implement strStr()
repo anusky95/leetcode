@@ -1,0 +1,23 @@
+class Solution:
+    def strStr(self, haystack: str, needle: str) -> int:
+        
+        """
+        :input1 type str
+        :input2 type str
+        :rtype: int
+        """
+        
+        #Find the position of the needle in haystack using "find" function
+        x = haystack.find(needle)
+        
+        #If the needle is empty string it matches with the main string as empty string is the subset of string of any length
+        if needle=="":
+            return 0
+        
+        #If the needle was not found in haystack then return -1
+        elif x<0:
+            return -1
+        
+        #Return the actual position of the needle in haystack
+        else:
+            return x
