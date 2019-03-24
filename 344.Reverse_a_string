@@ -1,0 +1,11 @@
+class Solution:
+    def reverseString(self, s: List[str]) -> None:
+        """
+        :input type str
+        :rtype Do not return anything, modify s in-place instead.
+        """
+        #Traverse half the length of string and swap in place
+        for i in range(len(s)//2): 
+                s[i], s[-i-1] = s[-i-1], s[i]
+                
+                
