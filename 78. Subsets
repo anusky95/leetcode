@@ -1,0 +1,25 @@
+#Find Powersets of the given set
+#Solution type: Iterative
+
+class Solution:
+    def subsets(self, nums: List[int]) -> List[List[int]]:
+        """
+        :input1 type:list
+        :rtype:List of lists
+        """
+        
+        #Initiate an empty subset array
+        result = [[]]
+        
+        #For each new number in the given list, add it to each member of the previous subset including null set.
+        for x in nums:
+            result.extend([i + [x] for i in result])
+            #result += [i+[x] for i in result]
+        return result
+    
+    
+        #Iteration 1: [[],[1]]
+        #Iteration 2: [[],[1]] + [[]+[2]] + [[1]+[2]]
+        #Iteration 2: [[],[1],[2],[1,2]] + [[]+[3]] + [[1]+[3]] + [[2]+[3]] + [[1,2]+[3]]
+        
+        #Result : [[],[1],[2],[1,2],[3],[1,3],[2,3],[1,2,3]]
