@@ -10,6 +10,13 @@ class Solution:
         lens = len(s)
         lent = len(t)
         
+         if lens!=lent:
+            return False
+        else:
+            return s==t
+        
+        """
+        ALSO CAN USE THIS METHOD
         # If length of s and t are not same then they are not anagrams
         if lens == lent:
             # While length of s is less than t
