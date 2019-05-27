@@ -25,3 +25,7 @@ class Solution:
         else:
             return False
                 
+    """
+        Time Complexity : Sorting the two strings = O(N^2)
+        Space Complexity : We are not using additional data structures here hence it is 
+    """
