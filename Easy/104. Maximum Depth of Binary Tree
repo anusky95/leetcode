@@ -12,14 +12,20 @@ class Solution:
         
 		## TIME COMPLEXITY : O(N) ##
 		## SPACE COMPLEXITY : O(N) ##
+        
+        # why do we need helper and node parameter?
         def helper(node):
             if node is None:
                 return 0
             l=r=0
             if node.left:
+                
+            # Why we have 0 as second parameter?
                 l = max(helper(node.left),0)
             if node.right:
                 r = max(helper(node.right),0)
             return max(l,r)+1
+        
+        ### Why the following line?
         return helper(root)
         
