@@ -1,0 +1,8 @@
+select t1.request_at as Day, Round(sum(CASE WHEN t1.Status like "%cancelled%" then 1 else 0 END)/count(*),2) AS "Cancellation Rate"
+FROM Trips t1
+WHERE t1.Client_Id IN(SELECT Users_Id FROM Users WHERE Banned = "NO" AND Role = "client")
+AND t1.Driver_Id IN(SELECT Users_Id FROM Users WHERE Banned = "NO" AND Role = "driver")
+AND t1.Request_at >= '2013-10-01' AND t1.Request_at <= '2013-10-03'
+GROUP BY t1.Request_at
+ORDER BY t1.Request_at
+
