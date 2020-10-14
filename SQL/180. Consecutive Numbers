@@ -1,0 +1,16 @@
+# Write your MySQL query statement below
+/*
+https://www.sqlservertutorial.net/sql-server-window-functions/sql-server-lag-function/
+LEAD() - Compares currnt row with next one
+LAG() - Compares current row with previous one
+*/
+
+
+select distinct Num as "ConsecutiveNums"
+from (
+SELECT Num,
+LEAD(Num,1) over(order by Id) as 'Lead',
+LAG(Num,1) over(order by Id) as 'Lag'
+from Logs
+) as t
+where t.num=t.Lead and t.num=t.Lag
