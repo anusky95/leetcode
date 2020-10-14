@@ -1,3 +1,5 @@
+#https://www.sqlservertutorial.net/sql-server-window-functions/sql-server-dense_rank-function/
+
 select Score as 'score',
 DENSE_RANK() OVER (ORDER BY Score DESC) 'Rank'
 From Scores
