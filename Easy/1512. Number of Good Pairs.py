@@ -29,8 +29,28 @@ class Solution:
 
         
         """
-        Alternative solution
+        Alternative solutions
         count the previous occurences of the number and increment every time it occurs
+           
+           Optimized O(N)
+           
+            dic = {}
+            count =0
+        
+            for num in nums:
+                if num in dic:
+                    count +=dic[num]
+                    dic[num] +=1
+                else:
+                    dic[num] =1
+            return count
+         
+         
+         
+         --------------------------------------------------------------------
+         
+            Optimized O(N) Without if else 
+         
             counts=0
             my_dict={}
             for n in nums:
