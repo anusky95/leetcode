@@ -26,3 +26,18 @@ class Solution:
                     if (nums[i]==nums[j]) and i<j:
                         count_num+=1
             return count_num
+
+        
+        """
+        Alternative solution
+        count the previous occurences of the number and increment every time it occurs
+            counts=0
+            my_dict={}
+            for n in nums:
+                counts+=my_dict.get(n,0)
+                my_dict[n]=my_dict.get(n,0)+1
+        
+        
+        """
+      
+    
