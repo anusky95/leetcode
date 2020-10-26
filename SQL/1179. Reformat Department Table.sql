@@ -42,3 +42,14 @@ min(case when t.month='Nov' then t.revenue else null end) as Nov_Revenue,
 min(case when t.month='Dec' then t.revenue else null end) as Dec_Revenue
 from Department t
 group by t.id
+
+
+
+/*
+Case Syntax
+Case When "condition" then "result1" else "result2" End
+
+Group by 
+Aggregate Function grouping by ID here
+
+*/
